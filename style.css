@@ -1,0 +1,982 @@
+body{
+    padding:0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin:0 auto;
+    width: 100vw;
+    height: 100vh;
+}
+
+.wrapper{
+    display: block;
+    margin: 0 auto;
+    background: url("img/soldiersukr.png") no-repeat 50% 100%;
+    background-size: contain;
+    
+}
+
+.header{
+    margin: 0 7vw;
+    display: flex;
+    align-items: center;
+    padding:0;
+    background-color: rgba(0, 0, 0, .3);
+    height: 14vh;
+}
+
+.logo__container{
+    flex: 10%;
+    text-align:center;
+    padding: 10px;
+}
+
+.trident{
+    width:60px;
+}
+
+.title__container{
+    flex: 70%;
+    display: inline-block;
+/*     margin: 0 auto; */
+    padding: 10px;
+    text-align: center;
+}
+
+.title,
+.sub__title{
+    margin: 0;
+    color: white;
+}
+
+.main{
+    margin: 0 auto;
+    height: 90vh;
+}
+
+
+.burger{
+    flex: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   width: auto;
+ 
+ }
+ 
+ .nav-btn{
+    display: block;
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .nav-btn > span,
+  .nav-btn > span::before,
+  .nav-btn > span::after {
+      display: block;
+      position: absolute;
+      top: 25px;
+    width: 55px;
+    height: 10px;
+    background-color: white;
+    transition-duration: .25s;
+  }
+  .nav-btn > span::before {
+    content: '';
+    top: -20px;
+  }
+  .nav-btn > span::after {
+    content: '';
+    top: 20px;
+  }
+  
+  .nav__title{
+      display: block;
+      margin: 20px auto;
+      color: white;
+      text-transform: uppercase;
+      font-weight: 800;
+      text-align: center;
+      position: relative;
+      top: 200px;
+  }
+  .nav{
+    display: flex;
+    position: absolute;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width:100vw ;
+    margin: 0;
+    padding: 150px 0;
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    transition-duration: .25s;
+  }
+ 
+  .nav-item{
+    flex: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 5px;
+    padding: 5px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    text-align: start;
+    position: relative;
+ }
+ /* 
+  a.nav-link {
+    display: block;
+    padding: 12px 24px;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    margin: 0;
+    font-weight: 700;
+    text-decoration: none;
+    transition-duration: .75s;
+  } */
+   
+  #nav-toggle{
+    opacity: 0;
+  }
+   
+  #nav-toggle:checked ~ .nav-btn > span{
+    transform: rotate(45deg);
+  }
+  #nav-toggle:checked ~ .nav-btn > span::before{
+    top: 0;
+    transform: rotate(0);
+  }
+  #nav-toggle:checked ~ .nav-btn > span::after{
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #nav-toggle:checked ~ .nav{
+    visibility: visible;
+    left: 0;
+  } 
+ 
+ 
+  .main p,
+  .main h2,
+  .main ul{
+      z-index: 1000;
+  }
+ 
+  .main h2{
+      color: black;
+      font-size:50px ;
+  }
+ 
+  .tabcontent__container{
+    display: block;
+    margin: 0 auto ;
+    padding: 50px;
+ } 
+ .tabcontent {
+    display: block;
+    margin: 0 auto;
+    /* width: 70vw; */
+ }
+
+ .tabheader__items {
+     list-style: none;
+    display: flex;   
+    position: absolute;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+ }
+ 
+ .tabheader__item {
+    display: block;
+    border: 2px solid black;
+    width:150px ;
+    height:200px;
+    padding: 15px;
+    margin: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s all
+ }
+ 
+ li.hero{
+    background-color: white;
+ }
+
+ .hero:first-of-type{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     height: 50px;
+     width: 50px;
+     align-self: center;
+     border-radius: 50%;
+     position: absolute;
+     left: -100px;
+ }
+ 
+ a.tabheader__link{
+    color: black;
+    transition: 0.5s;
+ }
+ 
+ a.tabheader__link__active{
+    color:red;
+    transform: scale(2);
+ }
+
+.show{
+    display: block;
+}
+
+.hide{
+    display:none;
+}
+
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade{
+    from{
+        opacity: 0.1;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.tabheader__image{
+    display: block;
+    margin: 0 auto;
+    border: 2px solid black;
+    height: 200px;
+    width: 200px;
+}
+
+.human{
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+}
+
+.human__walk{
+    animation-name: human__walk;
+    animation-timing-function: linear;
+    animation-duration: 15s;
+    animation-iteration-count: 1;
+   /*  animation-direction: reverse; */
+}
+@keyframes human__walk{
+    from{
+        right: 0;
+    }
+    to{
+        right: 50%;
+    }
+}
+
+
+.stick,
+.flag,
+.blue,
+.yellow,
+.mouth,
+.wirst,
+.foot,
+.head,
+.hand,
+.neck,
+.body,
+.stomach,
+.chest,
+.hips,
+.leg,
+.eye,
+.hand__section__top,
+.hand__section__bottom,
+.leg__section__top,
+.leg__section__bottom,
+.elbow,
+.knee{
+    display: block;
+    border: 2px solid black;
+    height: 125px;
+    width: 115px;
+    border-radius: 15px/15px;
+    
+}
+
+.head,
+.neck{
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0.9);
+   
+}
+
+.head{
+/*     margin-top: 10px; */
+    position: relative;
+    left: 40px;
+}
+
+.head,
+.eye,
+.elbow,
+.knee{
+    border-radius: 40%;
+}
+
+.mouth,
+.eye{
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin-left: 10px;
+    margin-top: 25px;
+    background-color: white;
+}
+
+.mouth{
+    position: absolute;
+    width: 20px;
+    height: 10px;
+}
+
+.neck{
+    position: relative;
+    width: 30px;
+    height: 40px;
+    border-top:none ;
+    left: 30px;
+    border-radius: 0;
+}
+
+.body__container,
+.leg__container{
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+   width: 150px;
+}
+
+.leg__container{
+    top: -70px;
+    left: -20px;
+    width: 120px;
+}
+
+
+.knee,
+.elbow{
+    width:40px;
+    height:40px;
+   }
+
+.hand{
+    margin: 0 auto;
+    position: absolute;
+    height: 350px;
+    width: 90px;
+    transform-origin: top;
+    border: none;
+}
+
+.left .wirst,
+.left .foot,
+.left .knee,
+.left .elbow,
+.left .leg__section__top,
+.left .leg__section__bottom,
+.left .hand__section__top,
+.left .hand__section__bottom{
+    background-color: rgba(0,0,0,0.9);
+   }
+
+.right .wirst,
+.right .foot,
+.right .knee,
+.right .elbow,
+.right .leg__section__top,
+.right .leg__section__bottom,
+.right .hand__section__top,
+.right .hand__section__bottom{
+    background-color: rgba(0,0,0,0.8);
+   }
+
+.foot,
+.leg__section__bottom{
+    transform: rotate(25deg) translateX(-55px);
+    width: 50px;
+    height: 220px;
+    transform-origin: top;
+    position: relative;
+    z-index: 80;
+}
+
+
+.leg__section__top{
+    transform-origin: top;
+    position: relative;
+    width: 55px;
+    height: 200px;
+}
+
+.hand__section__bottom{
+    transform: translateX(-20px);
+    width: 40px;
+    height: 145px;
+    transform-origin: top;
+}
+
+
+.hand__section__top:first-child {
+    transform: translateX(-20px);
+    width: 45px;
+    height: 140px;
+}
+
+.hand__section__bottom:first-child{
+    width: 45px;
+    height: 150px;
+    transform-origin: top;
+}
+
+.hand__section__top:nth-child(2) {
+    transform: translateX(-20px);
+    width: 40px;
+    height: 135px;
+}
+
+.hand__section__bottom:nth-child(2){
+    width: 40px;
+    height: 145px;
+    transform-origin: top;
+}
+
+.right .hand__section__top,
+.right .hand__section__bottom,
+.right .elbow,
+.right .wirst{
+    transform:translateY(5px) ;
+}
+
+
+.body{
+    position: relative;
+    height: 330px;
+    width: 180px;
+    margin:0 50px;
+    z-index: 50;
+  border: none;
+  transition: 1s;
+}
+
+.stomach,
+.hips,
+.chest{
+    height: 80px;
+    width: 150px;
+    margin:0 auto;
+   }
+
+   .chest{
+    background-color: rgba(90, 190, 236, 1);
+    box-shadow: -30px 0 0 rgba(0,0,0,0.9);
+    transform:translateX(-30px) rotate(0);
+   }
+
+.stomach{
+    height: 130px;
+    width: 60px;
+    margin-right: 100px;
+    background-color: rgba(227, 236, 90, 1);
+    box-shadow: -30px 0 0 10px rgba(0,0,0,0.9);
+}
+
+.hips{
+    height: 70px;
+    width: 110px;
+    margin-right: 50px;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: -30px 0 0 0 rgba(0,0,0,0.9);
+}
+
+.right{ 
+    animation-name: right;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 3;
+    transform:translateX(20px) rotate(0);
+    z-index: 10;
+}
+
+@keyframes right{
+    0%{
+        transform:translateX(20px) rotate(0);
+    }
+    25%{
+        transform:translateX(35px) rotate(35deg);
+    }
+    50%{
+        transform:translateX(20px) rotate(0);
+    }
+    75%{
+        transform:translateX(35px) rotate(-35deg);
+    }
+    100%{
+        transform:translateX(20px) rotate(0);
+    }
+}
+
+.left{
+    animation-name: left;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 3;
+    z-index: 80;
+}
+
+@keyframes left{
+    0%{
+        transform:translateX(0) rotate(0);
+    }
+    25%{
+        transform:translateX(-15px) rotate(-35deg);
+    }
+    50%{
+        transform:translateX(0) rotate(0);
+    }
+    75%{
+        transform:translateX(-15px) rotate(35deg);
+    }
+    100%{
+        transform:translateX(0) rotate(0);
+    }
+}
+
+.leg{
+    transform-origin: top;
+    animation-direction: reverse;
+    width: 70px;
+    border: none;
+}
+.left .hand__section__bottom,
+.left .hand__section__top,
+.right .hand__section__bottom,
+.right .hand__section__top{
+    z-index: 200;
+}
+
+.foot{
+    position: absolute;
+    top: 230px;
+    left: 10px;
+    width: 100px;
+    height: 20px;
+}
+.stick,
+.wirst{
+    width: 30px;
+    height: 80px;
+    position: absolute;
+    top:160px ;
+    left:0   ;
+    transform-origin: top;
+    transform:translate(20px,0) rotate(-10deg);
+}
+
+.right .wirst{
+    transform: translateY(-10px) rotate(-10deg);
+}
+
+.stick{
+    width: 1000px;
+    height: 5px;
+    top:-200px ;
+    left: -300px;
+    background-color: rgba(0,0,0,0.8);
+    transform: rotate(-250deg);
+}
+
+.rpg img,
+.molotovcoctail img,
+.kosa img,
+.AK img,
+.sniperrefile img,
+.refile img,
+.case img{
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    transform-origin: top;
+    top:160px ;
+    left:-65px   ; 
+}
+
+.rpg img{
+    transform: scale(2.5) rotate(190deg);
+    top: 430px;
+    /* left: 100px; */
+}
+
+.molotovcoctail img{
+   top:50px ;
+   left:10px   ;
+}
+.refile img{
+   transform: scale(3);
+   top:0 ;
+   left:0   ; 
+}
+
+.sniperrefile img{
+    transform: scale(3);
+    top:0 ;
+    left:0   ;
+}
+
+.AK img{
+    transform:scale(3) rotate(45deg);
+    top:20px ;
+    left:130px; 
+}
+
+.kosa img{
+    transform:scale(3) rotate(55deg);
+    top:-220px ;
+    left:350px;
+}
+
+.flag{
+    transform-origin: bottom;
+    height: 250px;
+    width: 200px;
+    position: relative;
+    animation-name: flag;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 2;  
+    border-radius: 0;
+}
+
+@keyframes flag{
+    from{
+        transform: skew(5deg);
+        height: 80%;
+    }
+    50%{
+        transform: skew(-5deg);
+        height: 100%;
+    }
+    to{
+        transform: skew(5deg);
+        height: 80%;
+    }
+}
+
+.blue,
+.yellow{
+    position: absolute;
+    transform-origin: bottom;
+    height: 300px;
+    width: 100px;
+    background-color: blue;
+    border-radius: 0;
+
+}
+
+.yellow{
+    background-color: yellow;
+    left: 100px;
+}
+
+
+.hips__move{
+    animation-name: hips;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 3;
+    transform:translateX(-10px) rotate(0);
+}
+
+@keyframes hips{
+    0%{
+        transform:translateX(-10px) rotate(0);
+    }
+    25%{
+        transform:translateX(-30px) rotate(10deg);
+    }
+    50%{
+        transform:translateX(-20px) rotate(0);
+    }
+    75%{
+        transform:translateX(-30px) rotate(-10deg);
+    }
+    100%{
+        transform:translateX(-10px) rotate(0);
+    }
+}
+
+.chest__move{
+    animation-name: chest;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 3;
+}
+
+@keyframes chest{
+    0%{
+        transform:translateX(-30px) rotate(0);
+    }
+    25%{
+        transform:translateX(-35px) rotate(-10deg);
+    }
+    50%{
+        transform:translateX(-40px) rotate(0);
+    }
+    75%{
+        transform:translateX(-35px) rotate(15deg);
+    }
+    100%{
+        transform:translateX(-30px) rotate(0);
+    }
+}
+
+.hand__skew{ 
+    animation-name: hand__skew;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 3;
+    animation-fill-mode: backwards;
+    z-index: 10;
+}
+
+@keyframes hand__skew{
+    0%{
+        transform:translateX(10px) rotate(0);
+    }
+    25%{
+        transform:translateX(15px) rotate(-15deg);
+    }
+    50%{
+        transform:translateX(20px) rotate(-25deg);
+    }
+    75%{
+        transform:translateX(15px) rotate(-15deg);
+    }
+    100%{
+        transform:translateX(10px) rotate(0);
+    }
+}
+
+.mouth__move{
+    animation-name: mouth__move;
+    animation-duration: 20s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    z-index: 10;
+}
+
+@keyframes mouth__move{
+    0%{
+        width: 20px;
+        transform: rotate(-10deg) scale(1);
+    }
+    25%{
+        width: 25px;
+        transform: skew(15deg) scale(1.1);
+        border-top-left-radius: 30%;
+        border-top-right-radius: 30%;
+    }
+    50%{
+        width: 30px;
+        transform: skew(25deg) scale(1.2);
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+    }
+    75%{
+        width: 25px;
+        transform: skew(15deg)  scale(1.1);
+        border-top-left-radius: 30%;
+        border-top-right-radius: 30%;
+    }
+    100%{
+        width: 20px;
+        transform: skew(0) scale(1);
+    }
+}
+
+.leg__skew{ 
+    animation-name: leg__skew;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 3;
+    z-index: 10;
+}
+
+@keyframes leg__skew{
+    0%{
+        transform:translateX(-10px) rotate(0);
+    }
+    25%{
+        transform:translateX(-15px) rotate(15deg);
+    }
+    50%{
+        transform:translateX(-20px) rotate(25deg);
+    }
+    75%{
+        transform:translateX(-15px) rotate(15deg);
+    }
+    100%{
+        transform:translateX(-10px) rotate(0);
+    }
+}
+
+.rpg__leg__skew{ 
+    animation-name: rpg__leg__skew;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    z-index: 10;
+}
+
+@keyframes rpg__leg__skew{
+    0%{
+        transform:translateX(-10px) rotate(0);
+    }
+    25%{
+        transform:translateX(-15px) rotate(15deg);
+    }
+    50%{
+        transform:translateX(-20px) rotate(25deg);
+    }
+    75%{
+        transform:translateX(-15px) rotate(15deg);
+    }
+    100%{
+        transform:translateX(-10px) rotate(0);
+    }
+}
+
+.foot__skew{ 
+    animation-name: foot__skew;
+    animation-duration: 1.5s;
+    animation-timing-function:ease-in;
+    animation-iteration-count: 3;
+    z-index: 10;
+}
+
+@keyframes foot__skew{
+    0%{
+        transform:translateX(-10px) rotate(0);
+    }
+    25%{
+        transform:translateX(-15px) rotate(15deg);
+    }
+    50%{
+        transform:translateX(-30px) rotate(25deg);
+    }
+    75%{
+        transform:translateX(-15px) rotate(15deg);
+    }
+    100%{
+        transform:translateX(-10px) rotate(0);
+    }
+}
+
+
+
+.leg .left{
+    z-index: 10;
+}
+
+.hand .left{
+    z-index: 200;
+}
+ .hand:first-child {
+    position: absolute;
+  left: 100px;
+  top: 0;
+}
+
+
+.hide{
+    display: none;
+}
+
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes fade{
+    from{
+       opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+}
+
+.rpg__human .rpg__right__hand__skew,
+.rpg__human .rpg__left__hand__skew{ 
+    transition: all 1s;
+    transform:rotate(-140deg); 
+}
+
+
+ .left__leg__section__bottom{
+    transition: all 1s;
+    transform: rotate(100deg);
+}
+
+.right__leg__section__bottom,
+.right__knee{
+    transform: translate(170px,-200px);
+}
+
+ .right__leg__section__top{
+    transform: rotate(-70deg);
+}
+
+ .rpg__foot{
+    transition: all 1s;
+    transform: translateX(0);
+}
+
+
+img.rocket{
+    display: block;
+    width: 100px;
+    height: auto;
+    margin-top: 210px;
+}
+
+img.rocket__launch{
+    transition: all linear 1s;
+    transform: translate(-10000px,8000px);
+}
+
+/* .rpg__human{
+    animation-iteration-count: unset;
+} */
+
+.rpg__human .crowd .rpg__human__body{
+    transform: translateY(300px);
+}
+
